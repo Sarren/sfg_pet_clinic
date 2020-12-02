@@ -1,7 +1,6 @@
-package com.sarren.sfg_pet_clinic.model;
+package sfg_pet_clinic.model;
 
 public class PetType {
-
     private String name;
 
     public String getName() {

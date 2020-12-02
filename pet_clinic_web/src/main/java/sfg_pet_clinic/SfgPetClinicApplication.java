@@ -1,4 +1,4 @@
-package com.sarren.sfg_pet_clinic;
+package sfg_pet_clinic;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
