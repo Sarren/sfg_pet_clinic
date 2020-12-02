@@ -51,6 +51,7 @@
         </plugins>
     </build>
     <scm>
+
         <developerConnection>scm:git:https://github.com/Sarren/sfg_pet_clinic.git</developerConnection>
         <tag>HEAD</tag>
   </scm>
