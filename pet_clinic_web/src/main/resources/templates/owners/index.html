@@ -5,7 +5,27 @@
     <title>List of pet Owners</title>
 </head>
 <body>
-    <h1 th:text="'List of pet Owners'">List of pet Owners...</h1>
+<!--/*@thymesVar id="id" type="com.sarren.sfg_pet_clinic.model.Owner"*/-->
+<h1 th:text="'List of pet Owners'">List of pet Owners...</h1>
+
+<table>
+    <thread>
+        <tr>
+            <th>Id</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+        </tr>
+    </thread>
+    <tbody>
+    <tr th:each="owner : ${owners}">
+
+
+        <td th:text="${owner.id}">1</td>
+        <td th:text="${owner.name}">Joe</td>
+        <td th:text="${owner.lastName}">Buck</td>
+    </tr>
+    </tbody>
+</table>
 
 </body>
 </html>
