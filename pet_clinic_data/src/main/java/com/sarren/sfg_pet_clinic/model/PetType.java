@@ -1,6 +1,14 @@
 package com.sarren.sfg_pet_clinic.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "Types")
 public class PetType extends BaseEntity {
+
+    @Column(name = "name")
     private String name;
 
     public String getName() {
