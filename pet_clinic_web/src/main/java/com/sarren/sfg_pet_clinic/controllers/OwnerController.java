@@ -5,9 +5,7 @@ import com.sarren.sfg_pet_clinic.services.OwnerService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -27,10 +25,10 @@ public class OwnerController {
     // We don't want to allow the webforms to manipulate the ID property
     // it's for security
     // This way we control the id property
-    @InitBinder
+    /*@InitBinder
     public void setAllowedFields(WebDataBinder webDataBinder){
         webDataBinder.setDisallowedFields("id");
-    }
+    }*/
 
     @GetMapping("/find")
     public String findOwners(Model model){
@@ -46,7 +44,7 @@ public class OwnerController {
         }
 
         //find owners by lastName
-        List<Owner> results = ownerService.findByLastNameLike(owner.getLastName());
+        List<Owner> results = ownerService.findByLastNameLike("%" + owner.getLastName() + "%");
 
         if (results.isEmpty()){
             result.rejectValue("lastName", "notFound", "not found");
