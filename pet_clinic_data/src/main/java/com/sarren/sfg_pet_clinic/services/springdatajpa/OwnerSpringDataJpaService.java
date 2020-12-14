@@ -21,7 +21,7 @@ public class OwnerSpringDataJpaService implements OwnerService {
     private final PetTypeRepository petTypeRepository;
 
     public OwnerSpringDataJpaService(OwnerRepository ownerRepository, PetRepository petRepository,
-                                     PetTypeRepository petTypeRepository) {
+                             PetTypeRepository petTypeRepository) {
         this.ownerRepository = ownerRepository;
         this.petRepository = petRepository;
         this.petTypeRepository = petTypeRepository;
@@ -39,7 +39,6 @@ public class OwnerSpringDataJpaService implements OwnerService {
 
     @Override
     public Set<Owner> findAll() {
-
         Set<Owner> owners = new HashSet<>();
         ownerRepository.findAll().forEach(owners::add);
         return owners;

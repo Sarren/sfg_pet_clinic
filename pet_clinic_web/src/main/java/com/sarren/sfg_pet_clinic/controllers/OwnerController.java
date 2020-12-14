@@ -90,18 +90,17 @@ public class OwnerController {
     }
 
     @GetMapping("/{ownerId}/edit")
-    public String initUpdateOwnerForm(@PathVariable("ownerId") Long ownerId, Model model) {
+    public String initUpdateOwnerForm(@PathVariable Long ownerId, Model model) {
         model.addAttribute(ownerService.findById(ownerId));
         return VIEWS_OWNER_CREATE_OR_UPDATE_FORM;
     }
 
     @PostMapping("/{ownerId}/edit")
     public String processUpdateOwnerForm(@Valid Owner owner, BindingResult result,
-                                         @PathVariable("ownerId") Long ownerId) {
+                                         @PathVariable Long ownerId) {
         if (result.hasErrors()) {
             return VIEWS_OWNER_CREATE_OR_UPDATE_FORM;
-        }
-        else {
+        } else {
             owner.setId(ownerId);
             Owner savedOwner = ownerService.save(owner);
             return "redirect:/owners/" + savedOwner.getId();

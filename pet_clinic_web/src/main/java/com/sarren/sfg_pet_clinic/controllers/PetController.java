@@ -28,8 +28,8 @@ public class PetController {
 
     public PetController(PetService petService, PetTypeService petTypeService, OwnerService ownerService) {
         this.petService = petService;
-        this.petTypeService = petTypeService;
         this.ownerService = ownerService;
+        this.petTypeService = petTypeService;
     }
 
     @ModelAttribute("types")
@@ -37,7 +37,7 @@ public class PetController {
         return petTypeService.findAll();
     }
 
-    @ModelAttribute("types")
+    @ModelAttribute("owner")
     public Owner findOwner(@PathVariable("ownerId") Long ownerId){
         return ownerService.findById(ownerId);
     }

@@ -45,7 +45,7 @@ class OwnerSpringDataJpaServiceTest {
 
     @Test
     void findByLastName() {
-         // When findbyLastname is called on ownerrepository is called I want it to return a returnOwner
+         // When findbyLastname is called on ownerrepository is called I want it to return a Owner
         when(ownerRepository.findByLastName(any())).thenReturn(returnOwner);
 
         Owner abbeloos = service.findByLastName(LAST_NAME);
