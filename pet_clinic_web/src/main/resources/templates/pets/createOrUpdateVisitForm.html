@@ -22,16 +22,16 @@
       <td th:text="${pet.name}"></td>
       <td
         th:text="${#temporals.format(pet.birthDate, 'yyyy-MM-dd')}"></td>
-      <td th:text="${pet.type}"></td>
+      <td th:text="${pet.petType}"></td>
       <td
-        th:text="${pet.owner?.firstName + ' ' + pet.owner?.lastName}"></td>
+        th:text="${pet.owner?.name + ' ' + pet.owner?.lastName}"></td>
     </tr>
   </table>
 
   <form th:object="${visit}" class="form-horizontal" method="post">
     <div class="form-group has-feedback">
       <input
-        th:replace="~{fragments/inputField :: input ('Date', 'date', 'date')}"  />
+              th:replace="~{fragments/inputField :: input ('Date', 'localDate', 'date')}"  />
       <input
         th:replace="~{fragments/inputField :: input ('Description', 'description', 'text')}" />
     </div>
